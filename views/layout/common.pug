@@ -1,0 +1,22 @@
+html
+  head
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/custom.css")
+  body
+    nav(class="navbar navbar-expand-lg navbar-light bg-light")
+      a(class="navbar-brand" href="/") Home
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+
+      div(class="collapse navbar-collapse", id="navbarSupportedContent")
+        ul(class="navbar-nav mr-auto")
+          li(class="nav-item")
+            a(class="nav-link" href="/books") Books
+          li(class="nav-item")
+            a(class="nav-link" href="/users") Users
+          li(class="nav-item")
+            a(class="nav-link" href="/transactions") Transactions
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    block content
