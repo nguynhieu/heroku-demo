@@ -1,0 +1,20 @@
+extends ../layout/common
+block content
+  h1 Create User Page
+  if (errors)
+    each err in errors
+      div(class="badge badge-danger d-block w-50 mb-2")= err
+  form(action="/users/create", method="post")
+    input(name="name",
+      placeholder="name",
+      class="d-block mb-2",
+      value=name ? name : '')
+    input(name="email", 
+      placeholder="email",
+      type="email"
+      class="d-block mb-2",
+      value=email ? email : '')
+    input(name="password", 
+      class="d-block mb-2",
+      placeholder="password",) 
+    button(class="btn btn-primary") Add

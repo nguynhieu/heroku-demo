@@ -1,0 +1,28 @@
+extends ./layout/common
+block content
+  table.table
+    thead
+      tr
+        th Title
+        th Description
+        th Add to cart
+        if (isAdmin)
+          th Update title
+          th Delete books
+    tbody
+      if (books)
+        each book in books
+          tr
+            td= book.title
+            td= book.desciption
+            td
+                a(href=`/books/${book.id}/add`) Add
+            if (isAdmin)
+              td
+                a(href=`/books/${book.id}/update`) Update
+              td
+                a(href=`/books/${book.id}/delete`) Delete
+  p= `CART(${totalBookInCart ? totalBookInCart : 0})`
+    a(href="/books/rent" class="btn btn-primary") Rent
+  if (isAdmin)
+    a(href="/books/create", class="btn btn-primary") Add a book to the library

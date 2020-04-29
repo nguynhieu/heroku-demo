@@ -1,0 +1,11 @@
+extends ./layout/common
+block content
+  h1 Create Book Page
+  form(action="/books/create", method="post")
+    input(name="title", 
+      placeholder="title...", 
+      class="d-block mb-2")
+    input(name="description", 
+      placeholder="description...",
+      class="d-block mb-2")
+    button(class="btn btn-primary") Add

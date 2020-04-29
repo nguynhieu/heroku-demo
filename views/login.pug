@@ -1,0 +1,18 @@
+extends ./layout/common
+block content
+  h1 Login
+  if (err)
+    div(class="badge badge-danger d-block w-50 mb-2")= err
+  form(action="/login", method="post")
+    input(
+      type="email",
+      name="email",
+      value=email?email: '',
+      placeholder="email", 
+      class="d-block mb-2")
+    input(
+      type="password",
+      name="password", 
+      placeholder="password...",
+      class="d-block mb-2")
+    button(class="btn btn-primary") Login

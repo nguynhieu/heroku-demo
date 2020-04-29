@@ -1,0 +1,16 @@
+extends ../layout/common
+block content
+  h1 Profile Users page 
+  ul
+    li 
+      p Avatar:
+      img(style="width: 30; height: 30", src= user.avatar ? user.avatar : 'https://www.w3schools.com/w3images/avatar2.png')
+      a(href=`/users/${user.id}/profile/avatar`) Upload avatar
+    li 
+      p Name:
+        span= ' ' + user.name
+    li 
+      p ID:
+        span= ' ' + user.id
+  a(href="/users") Back
+  

@@ -1,0 +1,14 @@
+extends ../layout/common
+block content
+  h1 Transactions Create Page
+  form(action="/transactions/create", method="post")
+    label(for="name") Name:
+    input(name="name", id="#name"
+      class="d-block mb-2")
+    label(for="books") Choose a book:
+      input(list="book" name="book", class="ml-2 mb-2")
+      datalist(id="book")
+        each book in books
+          option(value=book.title)
+    br
+    button(class="btn btn-primary") Add

@@ -1,0 +1,16 @@
+extends ../layout/common
+block content
+  h1 Transactions Index Page
+  table.table
+    thead
+      tr
+        th User name
+        th Book name
+        th Complete
+    tbody
+      each transaction in transactions
+        tr
+          td= transaction.name
+          td= transaction.book
+          td= transaction.isComplete ? "YES" : "NO"
+  a(href="/transactions/create", class="btn btn-primary") Borrow Book

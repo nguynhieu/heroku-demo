@@ -1,0 +1,6 @@
+extends ./layout/common
+block content
+  h1 Update page
+  form(action= `/books/${id}/update`, method="post", class="input-group")
+    input(name="title")
+    button(class="btn btn-primary") Update

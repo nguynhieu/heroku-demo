@@ -1,0 +1,28 @@
+extends ../layout/common
+block content
+  form.mt-2(action="/users", method="get")
+    ul.pagination.justify-content-center
+      -for (let i = 0; i < totalPage; i++)
+        li.page-item
+          input.page-link(type='submit', value=i+1, name="page")
+  table.table
+    thead
+      tr
+        th Name
+        th User ID
+        th Update
+        th Profile
+        th Delete
+    tbody
+      if (usersInPage)
+        each user in usersInPage
+          tr
+            td= user.name
+            td= user.id
+            td
+              a(href=`/users/${user.id}/update`) Update
+            td
+              a(href=`/users/${user.id}/profile`) Profile
+            td
+              a(href=`/users/${user.id}/delete`) Delete
+  a(href="/users/create", class="btn btn-primary") Create a new user
