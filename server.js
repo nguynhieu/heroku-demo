@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const app = express();
 const favicon = require('serve-favicon')
@@ -42,7 +44,7 @@ app.use('/books', cookieMiddleware.countCookie, bookRoute);
 
 app.use('/login', authRoute)
 
-app.use(authMiddleware.requireAuth);
+// app.use(authMiddleware.requireAuth);
 
 app.use('/users', cookieMiddleware.countCookie, userRoute);
 app.use('/transactions', transactionRoute);
@@ -61,6 +63,6 @@ app.use(function(error, req, res, next) {
   });
 });
 
-const listener = app.listen(process.env.PORT, () => {
+const listener = app.listen(3000, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });

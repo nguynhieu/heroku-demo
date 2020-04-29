@@ -31,9 +31,6 @@ module.exports.index = async (req, res, next) => {
   
   let books = await Book.find();
   try {
-    let a;
-    a.b();
-
     res.render("books", {
       totalBookInCart: totalBookInCart, 
       isAdmin: admin,

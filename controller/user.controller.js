@@ -14,9 +14,6 @@ cloudinary.config({
 });
 
 module.exports.index = async (req, res) => {
-  // Get total user page
-  
-  
   let users = await User.find();
   
   let totalPage = Math.ceil(users.length / 3);

@@ -18,19 +18,23 @@ module.exports.index = async (req, res) => {
   } else {
     admin = false;
   };
+
+  res.render("transaction/index", {
+    transactions: await Transaction.find()
+  });
   
-  if (admin) {
-    res.render("transaction/index", {
-      transactions: await Transaction.find()
-    });
-  } else {
-    res.render("transaction/index", {
-      transactions: transactions
-        .filter(item => {
-          return item.userId === userId
-        })
-    });
-  }
+  // if (admin) {
+  //   res.render("transaction/index", {
+  //     transactions: await Transaction.find()
+  //   });
+  // } else {
+  //   res.render("transaction/index", {
+  //     transactions: transactions
+  //       .filter(item => {
+  //         return item.userId === userId
+  //       })
+  //   });
+  // }
 }
 
 module.exports.create = async (req, res) => {
